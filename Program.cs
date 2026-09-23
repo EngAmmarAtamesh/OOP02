@@ -1,29 +1,15 @@
-﻿using System;
+﻿/*
+ * a) What is the difference between a class and a struct?
 
-namespace SmartDeliveryManagementSystem
-{
-    // ============================================
-    // DeliveryAddress Struct
-    // ============================================
-    public struct DeliveryAddress
-    {
-        public string Street { get; set; }
-        public string City { get; set; }
+A class is a reference type, while a struct is a value type.
 
-        public DeliveryAddress(string street, string city)
-        {
-            if (string.IsNullOrWhiteSpace(street))
-                throw new ArgumentException("Street cannot be empty.");
+* Class objects are stored as references to objects.
+* Struct variables contain their values directly.
+* A class supports inheritance and can inherit from another class.
+* A struct does not support inheritance from another class or struct.
+* A class can have a null reference.
+* Structs are generally used for small value-based objects.
 
-            if (string.IsNullOrWhiteSpace(city))
-                throw new ArgumentException("City cannot be empty.");
+b) Why are classes more suitable than structs for large applications?
 
-            Street = street;
-            City = city;
-        }
-
-        public override string ToString()
-        {
-            return $"{Street}, {City}";
-        }
-    }
+Classes are more suitable for large applications because they support inheritance, polymorphism, encapsulation, and reference-type behavior. They make it easier to organize and reuse code and model complex relationships between objects.
